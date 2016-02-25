@@ -1,4 +1,10 @@
 h1 HIIII!!!!!11111 Hi Monique
 h2 u r a queer
 h3 please add a video ok?
-
+p
+  | Make sure you click Share, Embed, and copy the url that comes after 'src='
+= form_for(@video) do |f|
+  .field
+    = f.label :url
+    = f.text_field :url
+    = f.submit

@@ -4,15 +4,20 @@ class VideosController < ApplicationController
   end
 
   def create
-    @video = Video.new(params_for_video)
+    @video = Video.new(video_params)
     if @video.save
-      redirect_to root
+      redirect_to root_url
     else
-      redirect_to action: :new
+      redirect_to new_video_url
     end
   end
 
   def show
     @video = Video.find(params[:id])
+  end
+
+  private
+  def video_params
+    params.require(:video).permit(:url)
   end
 end
