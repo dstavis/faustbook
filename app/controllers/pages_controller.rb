@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
   def home
-    @video_url = Video.last.url
+    @video = Video.last
   end
 end
